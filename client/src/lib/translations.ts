@@ -10,7 +10,7 @@ export const translations = {
       subtitle: "Ferramentas avançadas para análise de dados",
       items: [
         {
-          title: "ROC Analise de CSVs com agentes de IA",
+          title: "ROC CSV Analysis AI",
           description: "Análise Inteligente de Dados CSV",
           details: "Processe e analise arquivos CSV utilizando algoritmos avançados de inteligência artificial"
         },
