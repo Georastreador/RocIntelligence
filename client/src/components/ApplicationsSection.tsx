@@ -1,79 +1,27 @@
 import { Card } from "@/components/ui/card";
 import { Brain, ExternalLink, GitBranch, Search, FileText, Lightbulb, TrendingUp, Users, Shield, Camera, Network } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface Solution {
-  title: string;
-  description: string;
-  details: string;
   icon: typeof Brain;
   link?: string;
 }
 
-const solutions: Solution[] = [
-  {
-    title: "ROC Analise de CSVs com agentes de IA",
-    description: "Análise Inteligente de Dados CSV",
-    details: "Processe e analise arquivos CSV utilizando algoritmos avançados de inteligência artificial",
-    icon: Brain,
-    link: "https://ROC-analise-csvs-I2A2-replitcomdupe22.replit.app"
-  },
-  {
-    title: "ROC Fase 1",
-    description: "Análise e decomposição de problemas",
-    details: "Decomponha problemas complexos em componentes gerenciáveis com metodologia estruturada",
-    icon: GitBranch
-  },
-  {
-    title: "ROC Athena",
-    description: "Scraping e Oráculo",
-    details: "Coleta inteligente de dados e análise preditiva para insights estratégicos",
-    icon: Search
-  },
-  {
-    title: "ROC AI Agent 4 DOCs",
-    description: "Agente especializado em análise estratégica de Documentos",
-    details: "Extraia e analise informações de documentos com precisão usando IA",
-    icon: FileText
-  },
-  {
-    title: "ROC MCen",
-    description: "Criando mini-cenários com IA",
-    details: "Gere cenários estratégicos personalizados para planejamento e tomada de decisão",
-    icon: Lightbulb
-  },
-  {
-    title: "ROC CapPol Monitor",
-    description: "Análise de Capital Político",
-    details: "Monitore e analise tendências de capital político em tempo real",
-    icon: TrendingUp
-  },
-  {
-    title: "ROC Avl Pos Pol",
-    description: "Análise Política Estratégica e de Convites/Ligações",
-    details: "Avalie posicionamentos políticos e relações estratégicas com análise avançada",
-    icon: Users
-  },
-  {
-    title: "ROC SCUTUM",
-    description: "Sigilo e Confidencialidade (Pen-drive)",
-    details: "Proteção avançada de dados sensíveis com criptografia de nível militar",
-    icon: Shield
-  },
-  {
-    title: "ROC Food Vision Analyzer",
-    description: "Análise Visual de Alimentos",
-    details: "Identifique e analise alimentos através de visão computacional e IA",
-    icon: Camera
-  },
-  {
-    title: "ROC AI2IA",
-    description: "Sistema de Monitoramento de Infraestruturas Estratégicas",
-    details: "Monitore e proteja infraestruturas críticas com inteligência artificial avançada",
-    icon: Network
-  }
+const solutionIcons: Solution[] = [
+  { icon: Brain, link: "https://ROC-analise-csvs-I2A2-replitcomdupe22.replit.app" },
+  { icon: GitBranch },
+  { icon: Search },
+  { icon: FileText },
+  { icon: Lightbulb },
+  { icon: TrendingUp },
+  { icon: Users },
+  { icon: Shield },
+  { icon: Camera },
+  { icon: Network }
 ];
 
 export default function ApplicationsSection() {
+  const { t } = useLanguage();
   const handleNavigate = (link?: string) => {
     if (link) {
       window.open(link, '_blank');
@@ -91,24 +39,25 @@ export default function ApplicationsSection() {
             className="text-3xl md:text-4xl font-semibold mb-4"
             data-testid="text-section-title"
           >
-            Nossas Soluções
+            {t.solutions.title}
           </h2>
           <p 
             className="text-muted-foreground text-lg"
             data-testid="text-section-subtitle"
           >
-            Ferramentas avançadas para análise de dados
+            {t.solutions.subtitle}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {solutions.map((solution, index) => {
-            const Icon = solution.icon;
+          {t.solutions.items.map((solution, index) => {
+            const Icon = solutionIcons[index].icon;
+            const link = solutionIcons[index].link;
             return (
               <Card
                 key={index}
-                onClick={() => handleNavigate(solution.link)}
-                className={`p-8 text-center transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 group ${solution.link ? 'cursor-pointer' : ''}`}
+                onClick={() => handleNavigate(link)}
+                className={`p-8 text-center transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 group ${link ? 'cursor-pointer' : ''}`}
                 data-testid={`card-solution-${index}`}
               >
                 <div className="flex flex-col items-center space-y-4">
@@ -122,7 +71,7 @@ export default function ApplicationsSection() {
                       data-testid={`text-solution-title-${index}`}
                     >
                       {solution.title}
-                      {solution.link && <ExternalLink className="w-4 h-4 text-muted-foreground" />}
+                      {link && <ExternalLink className="w-4 h-4 text-muted-foreground" />}
                     </h3>
                     <p 
                       className="text-sm text-muted-foreground font-medium mb-3"
@@ -143,13 +92,13 @@ export default function ApplicationsSection() {
 
         <footer className="mt-24 pt-6 border-t border-border text-center">
           <p className="text-sm text-muted-foreground" data-testid="text-copyright">
-            Copyright © 2025 ROC Intelligence. All rights reserved.{" "}
+            {t.footer.copyright}{" "}
             <a 
               href="#" 
               className="text-muted-foreground hover:text-foreground transition-colors"
               data-testid="link-privacy-policy"
             >
-              Privacy Policy
+              {t.footer.privacy}
             </a>
             {" "}|{" "}
             <a 
@@ -157,7 +106,7 @@ export default function ApplicationsSection() {
               className="text-muted-foreground hover:text-foreground transition-colors"
               data-testid="link-terms-of-use"
             >
-              Terms of Use
+              {t.footer.terms}
             </a>
           </p>
         </footer>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroBackground from "@assets/generated_images/Futuristic_tech_background_8f4d7ada.png";
 
 interface HeroSectionProps {
@@ -7,6 +8,8 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ onExploreClick }: HeroSectionProps) {
+  const { t } = useLanguage();
+
   return (
     <section
       id="hero"
@@ -26,14 +29,14 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
           style={{ fontFamily: 'var(--font-display)' }}
           data-testid="text-hero-title"
         >
-          ROC Intelligence
+          {t.hero.title}
         </h1>
         
         <p 
           className="text-lg md:text-xl text-muted-foreground font-semibold mb-12 leading-relaxed max-w-2xl mx-auto"
           data-testid="text-hero-subtitle"
         >
-          Plataforma de Desenvolvimento em OSINT, DSS e Soluções customizadas impulsionada por IA de última geração
+          {t.hero.subtitle}
         </p>
         
         <Button
@@ -41,7 +44,7 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
           className="px-8 text-base uppercase tracking-wider shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300"
           data-testid="button-explore-platform"
         >
-          Explorar Plataforma
+          {t.hero.cta}
         </Button>
       </div>
 
