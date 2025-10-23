@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Brain, ExternalLink, GitBranch, Search, FileText, Lightbulb, TrendingUp, Users } from "lucide-react";
+import { Brain, ExternalLink, GitBranch, Search, FileText, Lightbulb, TrendingUp, Users, Shield, Camera, Network } from "lucide-react";
 
 interface Solution {
   title: string;
@@ -52,6 +52,24 @@ const solutions: Solution[] = [
     description: "Análise Política Estratégica e de Convites/Ligações",
     details: "Avalie posicionamentos políticos e relações estratégicas com análise avançada",
     icon: Users
+  },
+  {
+    title: "ROC SCUTUM",
+    description: "Sigilo e Confidencialidade (Pen-drive)",
+    details: "Proteção avançada de dados sensíveis com criptografia de nível militar",
+    icon: Shield
+  },
+  {
+    title: "ROC Food Vision Analyzer",
+    description: "Análise Visual de Alimentos",
+    details: "Identifique e analise alimentos através de visão computacional e IA",
+    icon: Camera
+  },
+  {
+    title: "ROC AI2IA",
+    description: "Sistema de Monitoramento de Infraestruturas Estratégicas",
+    details: "Monitore e proteja infraestruturas críticas com inteligência artificial avançada",
+    icon: Network
   }
 ];
 
