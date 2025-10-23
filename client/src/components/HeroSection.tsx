@@ -30,7 +30,7 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
         </h1>
         
         <p 
-          className="text-lg md:text-xl text-muted-foreground font-light mb-12 leading-relaxed max-w-2xl mx-auto"
+          className="text-lg md:text-xl text-muted-foreground font-semibold mb-12 leading-relaxed max-w-2xl mx-auto"
           data-testid="text-hero-subtitle"
         >
           Plataforma de Desenvolvimento em OSINT, DSS e Soluções customizadas impulsionada por IA de última geração
@@ -38,8 +38,7 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
         
         <Button
           onClick={onExploreClick}
-          size="lg"
-          className="px-8 py-6 text-base uppercase tracking-wider shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300"
+          className="px-8 text-base uppercase tracking-wider shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300"
           data-testid="button-explore-platform"
         >
           Explorar Plataforma
