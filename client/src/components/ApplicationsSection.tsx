@@ -12,7 +12,7 @@ const solutionIcons: Solution[] = [
   { icon: GitBranch },
   { icon: Search },
   { icon: FileText },
-  { icon: Lightbulb },
+  { icon: Lightbulb, link: "https://roc-mini-cenarios-replitcomdupe22.replit.app" },
   { icon: TrendingUp },
   { icon: Users },
   { icon: Shield },
