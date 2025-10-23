@@ -140,6 +140,29 @@ export default function ApplicationsSection() {
             );
           })}
         </div>
+
+        <footer className="mt-24 pt-12 border-t border-border text-center">
+          <p className="text-sm text-muted-foreground" data-testid="text-copyright">
+            Copyright © 2025 ROC Intelligence. All rights reserved.
+          </p>
+          <div className="mt-4 flex items-center justify-center gap-4">
+            <a 
+              href="#" 
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              data-testid="link-privacy-policy"
+            >
+              Privacy Policy
+            </a>
+            <span className="text-muted-foreground">|</span>
+            <a 
+              href="#" 
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              data-testid="link-terms-of-use"
+            >
+              Terms of Use
+            </a>
+          </div>
+        </footer>
       </div>
     </section>
   );
