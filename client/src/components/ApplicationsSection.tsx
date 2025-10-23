@@ -11,7 +11,7 @@ interface Solution {
 
 const solutions: Solution[] = [
   {
-    title: "Analise_CSVs_IA_I2A2",
+    title: "ROC Analise de CSVs com agentes de IA",
     description: "Análise Inteligente de Dados CSV",
     details: "Processe e analise arquivos CSV utilizando algoritmos avançados de inteligência artificial",
     icon: Brain,
@@ -24,15 +24,15 @@ const solutions: Solution[] = [
     icon: GitBranch
   },
   {
-    title: "ROC_Athena",
+    title: "ROC Athena",
     description: "Scraping e Oráculo",
     details: "Coleta inteligente de dados e análise preditiva para insights estratégicos",
     icon: Search
   },
   {
-    title: "ROC AI Agent 4 PDF",
-    description: "Processamento Inteligente de PDFs",
-    details: "Extraia e analise informações de documentos PDF com precisão usando IA",
+    title: "ROC AI Agent 4 DOCs",
+    description: "Agente especializado em análise estratégica de Documentos",
+    details: "Extraia e analise informações de documentos com precisão usando IA",
     icon: FileText
   },
   {
