@@ -33,7 +33,7 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
           className="text-lg md:text-xl text-muted-foreground font-light mb-12 leading-relaxed max-w-2xl mx-auto"
           data-testid="text-hero-subtitle"
         >
-          Plataforma de análise inteligente de dados impulsionada por IA de última geração
+          Plataforma de Desenvolvimento em OSINT, DSS e Soluções customizadas impulsionada por IA de última geração
         </p>
         
         <Button
