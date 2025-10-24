@@ -53,11 +53,12 @@ export default function ApplicationsSection() {
           {t.solutions.items.map((solution, index) => {
             const Icon = solutionIcons[index].icon;
             const link = solutionIcons[index].link;
+            const isLastItem = index === t.solutions.items.length - 1;
             return (
               <Card
                 key={index}
                 onClick={() => handleNavigate(link)}
-                className={`p-8 text-center transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 group ${link ? 'cursor-pointer' : ''}`}
+                className={`p-8 text-center transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 group ${link ? 'cursor-pointer' : ''} ${isLastItem ? 'lg:col-start-2' : ''}`}
                 data-testid={`card-solution-${index}`}
               >
                 <div className="flex flex-col items-center space-y-4">
